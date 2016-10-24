@@ -19,5 +19,27 @@ src="https://emoncms.org/vis/rawdata?feedid=138026&fill=1&colour=e00cec&units=Wa
   <div id="5" class="dial" style="position: absolute; margin: 0px; top: 140px; left: 1000px; width: 200px; height: 200px;" feedid="138026" max="3000" scale="" units="W" offset="" type="2" graduations="0">
   <canvas id="can-5" width="200" height="200"></canvas></div>
   <div id="6" class="heading-center" style="position: absolute; margin: 0px; top: 60px; left: 860px; width: 120px; height: 60px;">current power</div>
+  
+      
+  <script type="application/javascript">
+  var dashid = 37105;
+  var path = "http://emoncms.org/";
+  var widget = ["bar","button","cylinder","dewpoint","dial","feedvalue","jgauge","led","graph","vis"];
+  var apikey = "";
+  var userid = 1541;
+  var redraw = 1;
+  var reloadiframe = 0; // dont re-calculate vis iframe urls
+
+  $('body').css("background-color","#EDF7FC");
+
+  render_widgets_init(widget); // populate widgets variable 
+  render_widgets_start(); // start widgets refresh
+
+  $(window).resize(function(){
+    redraw = 1;
+  });
+</script>
+      
+      
   </body>
 </html>
