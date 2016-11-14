@@ -1,0 +1,52 @@
+The DSL lasercutter is a fairly generic device.
+
+The main controller board is a "lihuiyu k40 m2 nano" and has the model number
+"6c6879-LASER-M2:9"
+
+Lots of people are talking about this board on the internet and most of them
+are simply replacing it with a Smoothieboard.
+
+It is connected to the cutter body by a flex-cable for the limit switches
+and X axis motor and via a four-wire cable for the y axis.  Finally, it
+is connected to the power supply via a larger 4-wire molex connector,
+supplying 5v and 24v (and with a signal labeled "LO" - which might be
+"Laser Output")
+
+Neither of the expansion ports or activity ports are wired up to anything.
+
+The front panel focus adjust switch is hardwired to its motor and is
+not monitorable or remote controlable in any way.  The "percentage power
+and test" keypad is wired directly to the PSU, also with no monitoring
+or remote control.
+
+The main chip on the controller board is labeled "lhy730318", but that
+does not match any known chip.
+
+The controller appears to have some intelligence as it does a X/Y seek
+on startup - presumably reconfirming its home position (although, I have
+not studied its behaviour)
+
+There appears to be either reporting of limit switches back to the PC or
+the PC sends absolute locations as the software will not let you manually
+seek beyond its margins (and seems to know where these are)
+
+The controller board is connected to the PC via a USB port, using a CH341
+chip (idVendor=1a86, idProduct=5512) - this chip is visibly connected
+in parallel/mem mode as you can trace the 8-bit IO lines from the CH341
+to the LHY730318.
+
+With the parallel mode, it is possible that the whole system could be run
+as GPIO from the PC - the outputs needed are X-dir, X-step, Y-dir, Y-step,
+Laser and inputs of Limit-X, Limit-Y.  As mentioned above, it seems that
+there is some intelligence in the controller, so this is less likely.
+
+While there are open source drivers for the CH341 chip, they are all
+for async serial or I2C modes - I have not been able to find a datasheet
+or example code for the parallel port mode.  So, the usb protocol will
+need to be partially reverse engineered to find the exact data sent
+
+Some proof-of-concept USB traces have been taken, showing it will be
+possible to collect the data (and there are suggestions of a serial data
+stream in them) but no correlation between the data and the PC has been
+done yet.
+
