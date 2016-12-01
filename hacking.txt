@@ -1,7 +1,7 @@
 The DSL lasercutter is a fairly generic device.
 
 The main controller board is a "lihuiyu k40 m2 nano" and has the model number
-"6c6879-LASER-M2:9"
+"6c6879-LASER-M2:9"  - see IMAG0006.jpg for board photo
 
 Lots of people are talking about this board on the internet and most of them
 are simply replacing it with a Smoothieboard.
