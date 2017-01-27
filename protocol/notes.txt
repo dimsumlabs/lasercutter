@@ -1,0 +1,49 @@
+
+Notes on trying to reverse engineer the protocol used by this laser
+cutter.
+
+Setup
+=====
+
+Make sure you have the "usbmon" linux module inserted, then you can
+startup wireshark and capture packets (current hardware configuration
+has the laser cutter on the "usbmon1" port)
+
+Example Capture files
+=====================
+
+Some example captures are included here for analysis.  The sequence
+of events performed during each capture is also documented below.
+
+capture1
+--------
+
+* turn on laser
+* start capture
+* start corel laser
+* stop corel laser
+* stop capture
+
+capture2
+--------
+
+* start capture
+* start corel laser
+* open engraving dialog
+* cancel engraving dialog
+* stop corel laser
+* stop capture
+
+capture3
+--------
+
+* start capture
+* start corel laser
+* open engraving dialog
+* single step right 5 times slowly
+* single step up 5 times slowly
+* cancel engraving dialog
+* stop corel laser
+* stop capture
+
+
