@@ -35,12 +35,43 @@ def packet_handler(datalen, data, timestamp):
     if urb_type=='C' and transfer_type=='URB_BULK' and direction=='>':
         show_packet = False
 
+    comment = ''
+    # default to just displaying the whole "leftover capture data"
+    databuf = data[0x40:]
+
+    # output data packets
+    if urb_type=='S' and transfer_type=='URB_BULK' and direction=='>':
+        opcodes = {
+            '\xa0': 'CMD_GETSTATUS',
+            '\xa6': 'CMD_SENDDATA',
+        }
+        comment = opcodes[data[0x40]]
+        databuf = data[0x41:]
+
+    # The only inputs I have seen appears to be status replies
+    if urb_type=='C' and transfer_type=='URB_BULK' and direction=='<':
+        seen_status = {
+            '\xff\xcc\x5f\x08\x13\x00': 'STATUS=postinit1', # occurs occasionally
+            '\xff\xcc\x6f\x08\x13\x00': 'STATUS=postinit',  # seen after first init string sent
+            '\xff\xce\x4f\x08\x13\x00': 'STATUS=idle3',     # occurs occasionally
+            '\xff\xce\x5f\x08\x13\x00': 'STATUS=idle2',     # occurs occasionally
+            '\xff\xce\x6f\x08\x13\x00': 'STATUS=idle1',     # seen before the plot starts (idle?)
+            '\xff\xce\x7f\x08\x13\x00': 'STATUS=idle4',     # occurs occasionally
+            '\xff\xec\x6f\x08\x13\x00': 'STATUS=idle5',     # occurs occasionally
+            '\xff\xee\x4f\x08\x13\x00': 'STATUS=pause3',    # occurs occasionally
+            '\xff\xee\x5f\x08\x13\x00': 'STATUS=pause2',    # occurs occasionally
+            '\xff\xee\x6f\x08\x13\x00': 'STATUS=pause1',    # perhaps a busy signal
+            '\xff\xee\x7f\x08\x13\x00': 'STATUS=pause4',    # occurs occasionally
+        }
+        comment = '       '+seen_status[data[0x40:]]
+
     if show_packet:
-        print "{:7.2f} {} {} {}".format(
+        print "{:7.2f} {} {} {}: {}".format(
             timestamp_delta,
             transfer_type,
             direction,
-            data[0x40:]
+            comment,
+            databuf
         )
 
 def main():
