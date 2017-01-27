@@ -9,6 +9,15 @@ Make sure you have the "usbmon" linux module inserted, then you can
 startup wireshark and capture packets (current hardware configuration
 has the laser cutter on the "usbmon1" port)
 
+Capture Analysis
+================
+
+The script "extract.py" can be used to try and extract the data stream
+from a usb packet capture
+
+Usage:
+    ./extract.py FILENAME > output
+
 Example Capture files
 =====================
 
