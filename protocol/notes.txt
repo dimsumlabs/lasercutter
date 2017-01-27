@@ -55,4 +55,11 @@ capture3
 * stop corel laser
 * stop capture
 
+References
+==========
+
+This project implements none of the parallel port modes of the CH341, but it
+does have some definitions of interest:
+
+    https://github.com/stefanct/ch341eepromtool/blob/master/ch341eeprom.h
 

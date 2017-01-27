@@ -42,8 +42,8 @@ def packet_handler(datalen, data, timestamp):
     # output data packets
     if urb_type=='S' and transfer_type=='URB_BULK' and direction=='>':
         opcodes = {
-            '\xa0': 'CMD_GETSTATUS',
-            '\xa6': 'CMD_SENDDATA',
+            '\xa0': 'CMD_GETSTATUS',    # mCH341_PARA_CMD_STS
+            '\xa6': 'CMD_SENDDATA',     # mCH341_PARA_CMD_W0
         }
         comment = opcodes[data[0x40]]
         databuf = data[0x41:]
