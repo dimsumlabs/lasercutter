@@ -51,19 +51,20 @@ def packet_handler(datalen, data, timestamp):
     # The only inputs I have seen appears to be status replies
     if urb_type=='C' and transfer_type=='URB_BULK' and direction=='<':
         seen_status = {
-            '\xff\xcc\x5f\x08\x13\x00': 'STATUS=postinit1', # occurs occasionally
-            '\xff\xcc\x6f\x08\x13\x00': 'STATUS=postinit',  # seen after first init string sent
-            '\xff\xce\x4f\x08\x13\x00': 'STATUS=idle3',     # occurs occasionally
-            '\xff\xce\x5f\x08\x13\x00': 'STATUS=idle2',     # occurs occasionally
-            '\xff\xce\x6f\x08\x13\x00': 'STATUS=idle1',     # seen before the plot starts (idle?)
-            '\xff\xce\x7f\x08\x13\x00': 'STATUS=idle4',     # occurs occasionally
-            '\xff\xec\x6f\x08\x13\x00': 'STATUS=idle5',     # occurs occasionally
-            '\xff\xee\x4f\x08\x13\x00': 'STATUS=pause3',    # occurs occasionally
-            '\xff\xee\x5f\x08\x13\x00': 'STATUS=pause2',    # occurs occasionally
-            '\xff\xee\x6f\x08\x13\x00': 'STATUS=pause1',    # perhaps a busy signal
-            '\xff\xee\x7f\x08\x13\x00': 'STATUS=pause4',    # occurs occasionally
+            '\xff\xcc\x5f\x08\x13\x00': 'postinit1', # occurs occasionally
+            '\xff\xcc\x6f\x08\x13\x00': 'postinit ',  # seen after first init string sent
+            '\xff\xce\x4f\x08\x13\x00': 'idle3    ',     # occurs occasionally
+            '\xff\xce\x5f\x08\x13\x00': 'idle2    ',     # occurs occasionally
+            '\xff\xce\x6f\x08\x13\x00': 'idle1    ',     # seen before the plot starts (idle?)
+            '\xff\xce\x7f\x08\x13\x00': 'idle4    ',     # occurs occasionally
+            '\xff\xec\x6f\x08\x13\x00': 'idle5    ',     # occurs occasionally
+            '\xff\xee\x4f\x08\x13\x00': 'pause3   ',    # occurs occasionally
+            '\xff\xee\x5f\x08\x13\x00': 'pause2   ',    # occurs occasionally
+            '\xff\xee\x6f\x08\x13\x00': 'pause1   ',    # perhaps a busy signal
+            '\xff\xee\x7f\x08\x13\x00': 'pause4   ',    # occurs occasionally
         }
-        comment = '       '+seen_status[data[0x40:]]
+        comment = '       STATUS='+seen_status[data[0x40:]]
+        databuf = ' '.join(map("{0:b}".format, map(ord,list(databuf))))
 
     if show_packet:
         print "{:7.2f} {} {} {}: {}".format(
