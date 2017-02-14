@@ -55,6 +55,35 @@ capture3
 * stop corel laser
 * stop capture
 
+Write to File Examples
+======================
+The corel laser software also has a write to file feature.  This results in
+a file containing the data that would be sent to the laser cutter.
+
+For the purpose of having a known test sample, a simple corel draw file
+was created with two 10mm x 10mm squares, located at x=10mm, y=10mm and
+x=10mm, y=30mm (originally only one square was used, but this seemed to
+cause the software to not generate any output).  This file is saved in
+this repo as "square10x10.cdr" and all the examples below use this file
+as a base.
+
+simple tests
+------------
+
+filename |  speed   | refer x | refer y
+---------+----------+---------+---------
+outfile1 | 10mm/s   | 10mm    | 10mm
+outfile2 | 11mm/s   | 11mm    | 11mm
+outfile3 | 12mm/s   | 12mm    | 12mm
+outfile4 | 13mm/s   | 10mm    | 10mm
+outfile5 | 10mm/s   | 14mm    | 10mm
+outfile6 | 10mm/s   | 10mm    | 15mm
+outfile7 |  0mm/s   | 10mm    | 10mm
+outfile8 | 0.25mm/s | 10mm    | 10mm
+outfile9 | 10mm/s   |  0mm    |  0mm
+
+
+
 References
 ==========
 
