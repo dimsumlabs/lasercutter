@@ -7,6 +7,18 @@ import pcap
 
 timestamp_first = None
 
+# Some status bit definitions, taken from a CH341 driver - they may or may
+# not be relevant
+# / Bit 7 - Bit 0 corresponds to the D7-D0 pin of CH341
+# / Bit 8 corresponds to the ERR # pin of CH341
+# / bit 9 corresponds to the PEMP pin of CH341
+# / bit 10 corresponds to the INT # pin of CH341
+# / bit 11 corresponds to the SLCT pin of CH341
+# / Bit 13 corresponds to the BUSY / WAIT # pin of CH341
+# / bit 14 corresponds to the AUTOFD # / DATAS # pin of CH341
+# / bit 15 corresponds to the SLCTIN # / ADDRS # pin of CH341
+# / bit 23 corresponds to the SDA pin of CH341
+
 # This python CRC function taken from http://www.scorchworks.com/K40whisperer
 #######################################################################
 #  The one wire CRC algorithm is derived from the OneWire.cpp Library
