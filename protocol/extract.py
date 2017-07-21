@@ -7,6 +7,24 @@ import pcap
 
 timestamp_first = None
 
+# This python CRC function taken from http://www.scorchworks.com/K40whisperer
+#######################################################################
+#  The one wire CRC algorithm is derived from the OneWire.cpp Library
+#  The latest version of this library may be found at:
+#  http://www.pjrc.com/teensy/td_libs_OneWire.html
+#######################################################################
+def OneWireCRC(line):
+    crc=0
+    for i in range(len(line)):
+        inbyte=ord(line[i])
+        for j in range(8):
+            mix = (crc ^ inbyte) & 0x01
+            crc >>= 1
+            if (mix):
+                crc ^= 0x8C
+            inbyte >>= 1
+    return crc
+
 def packet_handler(datalen, data, timestamp):
     global timestamp_first
     if timestamp_first is None:
@@ -35,6 +53,7 @@ def packet_handler(datalen, data, timestamp):
     if urb_type=='C' and transfer_type=='URB_BULK' and direction=='>':
         show_packet = False
 
+    description = ''
     comment = ''
     # default to just displaying the whole "leftover capture data"
     databuf = data[0x40:]
@@ -45,8 +64,21 @@ def packet_handler(datalen, data, timestamp):
             '\xa0': 'CMD_GETSTATUS',    # mCH341_PARA_CMD_STS
             '\xa6': 'CMD_SENDDATA',     # mCH341_PARA_CMD_W0
         }
-        comment = opcodes[data[0x40]]
+        description = opcodes[data[0x40]]
         databuf = data[0x41:]
+
+        if len(databuf) >0:
+            mbz_buf = ord(databuf[0])
+            crc_buf = ord(databuf[-1])
+            databuf = databuf[1:-2]
+
+            if mbz_buf != 0:
+                comment += "ERROR: MBZ={:x} ".format(mbz_buf)
+
+            crc_calc = OneWireCRC(databuf)
+
+            if crc_buf != crc_calc:
+                comment += "ERROR: CRC={:x}, calc={:x}".format(crc_buf,crc_calc)
 
     # The only inputs I have seen appears to be status replies
     if urb_type=='C' and transfer_type=='URB_BULK' and direction=='<':
@@ -63,16 +95,17 @@ def packet_handler(datalen, data, timestamp):
             '\xff\xee\x6f\x08\x13\x00': 'pause1   ',    # perhaps a busy signal
             '\xff\xee\x7f\x08\x13\x00': 'pause4   ',    # occurs occasionally
         }
-        comment = '       STATUS='+seen_status[data[0x40:]]
+        description = '       STATUS='+seen_status[data[0x40:]]
         databuf = ' '.join(map("{0:b}".format, map(ord,list(databuf))))
 
     if show_packet:
-        print "{:7.2f} {} {} {}: {}".format(
+        print "{:7.2f} {} {} {}: {} {}".format(
             timestamp_delta,
             transfer_type,
             direction,
+            description,
+            databuf,
             comment,
-            databuf
         )
 
 def main():
