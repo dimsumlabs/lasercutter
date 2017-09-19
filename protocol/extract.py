@@ -3,7 +3,7 @@
 #
 
 import sys
-import pcap
+import pcap # debian package python-libpcap (not the other python 'pcap' lib)
 
 timestamp_first = None
 
