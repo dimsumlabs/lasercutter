@@ -15,3 +15,7 @@ power (as the tube gets older, the power output drops)
 | Dark plastic | 3 | 1940 | 25% | 1x250 | 1x25 | 3x20 | | |
 | Dark plastic | 3 | 1941 | 25% | 1x250 | 1x25 | 5x20 | | |
 | Clear plastic | 6 | 1941 | 25% | 1x250 | 1x25 | 6x10 | not quite cut through | |
+| Balsawood? | 2 | 1940 | 13% | 1x250 | 1x25 | 3x20 | | |
+| Balsawood? | 5 | 1940 | 25% | 1x250 | 1x25 | 3x20 | Some scorching seen | |
+| White top, epoxy infused wood | 3 | 1940 | 25% | 1x250 | 1x25 | 3x20 | Some discoloration of the white top | |
+| ? | 2.5 | 1940 | 25% | 1x250 | 1x25 | 3x20 | Raster Cross almost cut through | |
