@@ -10,5 +10,7 @@ power (as the tube gets older, the power output drops)
 
 | Material | Date | Pwr | Rast | Vect | Cut | Remarks | Image |
 | -------- | ---- | ----- | ------ | ------ | --- | ------- | ----- |
+| Dark plastic, 3mm thick | 1940 | 25% | 1x250 | 1x25 | 2x20 | Could be broken out of surround, but significant plastic adhering | |
+| Dark plastic, 3mm thick | 1940 | 25% | 1x250 | 1x25 | 3x20 | | |
 | Dark plastic, 3mm thick | 1941 | 25% | 1x250 | 1x25 | 5x20 | | |
 | Clear plastic, 6mm thick | 1941 | 25% | 1x250 | 1x25 | 6x10 | not quite cut through | |
