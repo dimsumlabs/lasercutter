@@ -28,10 +28,10 @@ exact settings that were used (along with the YYMM Date code of the test)
 | ? | 2.5 | 1940 | 25% | 1x250 | 1x25 | 3x20 | Cross almost cut through | <img src="1940-2.5-wood2.jpg" width=100> |
 | Clear plastic | 3 | ? | 40% | 2x250 | 2x25 | 10x20 | not separated | <img src="1910-3-plastic3.jpg" width=100> |
 | Clear plastic | 3 | ? | 40% | 2x250 | 2x25 | 15x20 | | <img src="1910-3-plastic3-2.jpg" width=100> |
-| White pianofinish (dark side up) | 1 | ? | 40% | 1x250 | 1x25 | 6x20 | not separated | <img src="1910-1-wood3.jpg" width=100> |
-| White pianofinish (dark side up) | 1 | ? | 40% | 1x250 | 1x25 | 10x20 | | <img src="1910-1-wood3-2.jpg" width=100> |
-| White pianofinish (dark side up) | 1 | ? | 40% | 1x250 | 1x25 | 8x20 | | <img src="1910-1-wood3-3.jpg" width=100> |
-| White pianofinish (white side up) | 1 | ? | 40% | 1x250 | 1x25 | 10x20 | | <img src="1910-1-wood3-4.jpg" width=100> |
+| White pianofinish (dark side up) | <1 | ? | 40% | 1x250 | 1x25 | 6x20 | not separated | <img src="1910-1-wood3.jpg" width=100> |
+| White pianofinish (dark side up) | <1 | ? | 40% | 1x250 | 1x25 | 10x20 | | <img src="1910-1-wood3-2.jpg" width=100> |
+| White pianofinish (dark side up) | <1 | ? | 40% | 1x250 | 1x25 | 8x20 | | <img src="1910-1-wood3-3.jpg" width=100> |
+| White pianofinish (white side up) | <1 | ? | 40% | 1x250 | 1x25 | 10x20 | | <img src="1910-1-wood3-4.jpg" width=100> |
 
 
 ## Laser Maintenance
