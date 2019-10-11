@@ -26,3 +26,12 @@ exact settings that were used (along with the YYMM Date code of the test)
 | Balsawood? | 5 | 1940 | 25% | 1x250 | 1x25 | 3x20 | Some scorching seen | <img src="1940-5-balsawood.jpg" width=100> |
 | White top, epoxy infused wood | 3 | 1940 | 25% | 1x250 | 1x25 | 3x20 | Some discoloration of the white top | <img src="1940-3-wood1.jpg" width=100> |
 | ? | 2.5 | 1940 | 25% | 1x250 | 1x25 | 3x20 | Raster Cross almost cut through | <img src="1940-2.5-wood2.jpg" width=100> |
+
+## Laser Maintenance
+
+| Date | Activity |
+| ---- | ------ |
+| FIXME | Original tube installed |
+| FIXME | Replaced wiring harness |
+| 1939 | Replaced Laser Tube |
+| 1940 | Aligned mirrors |
