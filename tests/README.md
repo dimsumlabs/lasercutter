@@ -32,6 +32,10 @@ exact settings that were used (along with the YYMM Date code of the test)
 | White pianofinish (dark side up) | <1 | ? | 40% | 1x250 | 1x25 | 10x20 | | <img src="1910-1-wood3-2.jpg" width=100> |
 | White pianofinish (dark side up) | <1 | ? | 40% | 1x250 | 1x25 | 8x20 | | <img src="1910-1-wood3-3.jpg" width=100> |
 | White pianofinish (white side up) | <1 | ? | 40% | 1x250 | 1x25 | 10x20 | | <img src="1910-1-wood3-4.jpg" width=100> |
+| particleboard? | 2 | ? | 40% | 1x250 | 1x25 | 3x20 | | <img src="1910-2-wood4.jpg" width=100> |
+| cardboard? | 1 | 40% | 1x250 | 1x25 | 1x20 | not separated | <img src="1910-2-card1.jpg" width=100> |
+| cardboard? | 1 | 40% | 1x250 | 1x25 | 2x20 | | <img src="1910-2-card1-2.jpg" width=100> |
+| cardboard? | 1 | 40% | 2x250 | 2x25 | 15x20 | cut through | <img src="1910-2-card1-3.jpg" width=100> |
 
 
 ## Laser Maintenance
