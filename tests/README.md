@@ -2,6 +2,8 @@ Occasionally, we do test cuts to check how the laser works on various
 materials.  It can also be used to watch out for degradation in the laser
 power (as the tube gets older, the power output drops)
 
+To ensure consistancy, tests are done with a specific [sample diagram](test.svg).
+
 * *Thic* is how thick the material is (in millimeters)
 * *Date* is the YYWW that the test was done
 * *Pwr* is the Laser percentage power (kept the same for all three passes)
