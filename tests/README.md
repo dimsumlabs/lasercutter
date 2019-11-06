@@ -36,6 +36,8 @@ exact settings that were used (along with the YYMM Date code of the test)
 | ? | 1 | ? | 40% | 1x250 | 1x25 | 1x20 | not separated | <img src="1910-1-wood5.jpg" width=100> |
 | ? | 1 | ? | 40% | 1x250 | 1x25 | 2x20 | | <img src="1910-1-wood5-2.jpg" width=100> |
 | ? | 1 | ? | 40% | 2x250 | 2x25 | 15x20 | cut through | <img src="1910-1-wood5-3.jpg" width=100> |
+| DSL business card | 0.25 | 1945  | 35% | 1x250 | ? | ? | Burn away everything with raster | <img src="business-card-solder-stencil.jpg" width=100> |
+
 
 
 ## Laser Maintenance
@@ -46,3 +48,4 @@ exact settings that were used (along with the YYMM Date code of the test)
 | FIXME | Replaced wiring harness |
 | 1939 | Replaced Laser Tube |
 | 1940 | Aligned mirrors |
+
