@@ -46,3 +46,7 @@ exact settings that were used (along with the YYMM Date code of the test)
 | FIXME | Replaced wiring harness |
 | 1939 | Replaced Laser Tube |
 | 1940 | Aligned mirrors |
+| FIXME | mirrors cleaned |
+| FIXME | cooling system cleaned |
+| FIXME | improved cooling system |
+| FIXME | something something mirrors |
